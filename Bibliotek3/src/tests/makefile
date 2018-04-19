@@ -1,6 +1,6 @@
 CC=gcc
 LIBDIR = $(shell pwd)/../
-CFLAGS = -g -pedantic -Wall -lm $(LIBDIR)libcomponent.so
+CFLAGS = -g -pedantic -Wall -lm -Wl,$(LIBDIR)libcomponent.so
 
 OBJ = libcomponent_test.o
 
@@ -8,8 +8,8 @@ OBJ = libcomponent_test.o
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 libcomponent_test: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS)
 	
+.PHONY: clean
 clean:
-	-rm -f *.o *~ CORE *~
-	-rm -f libcomponent_test *~ CORE *~
+	-rm -f $(TARGET) $(OBJ)
