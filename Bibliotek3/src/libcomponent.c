@@ -47,9 +47,10 @@ int numDigits(int num)
 
 // e_resistance(orig_resistance, res_array)
 //
-// input: a resistance value and an empty pointer
+// input: A resistance value and a preallocated pointer.
+//		  The pointer res_array has to be of size numEquivalent*sizeof(float).
 //
-// output: number of equivalent resistances needed and
+// output: Number of equivalent resistances needed and
 //         also fills the pointer with the equivalent
 //         resistances needed to get the original.
 int e_resistance(float orig_resistance, float *res_array) {

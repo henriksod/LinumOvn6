@@ -23,9 +23,10 @@ const int e12_series[] = {0, 10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82};
 
 // e_resistance(orig_resistance, res_array)
 //
-// input: a resistance value and an empty pointer
+// input: A resistance value and a preallocated pointer.
+//		  The pointer res_array has to be of size numEquivalent*sizeof(float).
 //
-// output: number of equivalent resistances needed and
+// output: Number of equivalent resistances needed and
 //         also fills the pointer with the equivalent
 //         resistances needed to get the original.
 extern int e_resistance(float orig_resistance, float *res_array);
