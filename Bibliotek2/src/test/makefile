@@ -1,5 +1,5 @@
 CC=gcc
-LIBDIR = $(shell pwd)/../
+LIBDIR = $(shell pwd)/../../
 CFLAGS = -Wall 
 LDFLAGS = -Wl,$(LIBDIR)libpower.so
 RM = -rm -f
