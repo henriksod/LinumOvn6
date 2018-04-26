@@ -1,5 +1,5 @@
 CFLAGS = -fPIC -g -pedantic -Wall -Wextra -Werror
-LDFLAGS = -shared -fPIC
+LDFLAGS = -shared -fPIC -lm
 CC = gcc
 
 TARGET  = libcomponent.so
@@ -11,7 +11,7 @@ all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) -c $(CFLAGS) $(SOURCES)
-	$(CC) $(LDFLAGS) -o $@ $<
+	$(CC) -o $@ $< $(LDFLAGS) 
 
 .PHONY: clean
 clean:
