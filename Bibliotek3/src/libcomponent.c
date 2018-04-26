@@ -14,7 +14,6 @@
 #include "libcomponent.h"
 
 #include <stdio.h>
-#include <math.h>
 
 // toClosestPower10(num, power)
 //
@@ -51,13 +50,13 @@ int numDigits(int num)
 // output: number of equivalent resistances needed and
 //         also fills the pointer with the equivalent
 //         resistances needed to get the original.
-int e_resistance(float orig_resistance, float *res_array) {
+int e_resistance(int orig_resistance, int *res_array) {
 	
-	float resistance = orig_resistance;
+	int resistance = orig_resistance;
 
 	// Allocate memory for pointer.
-	//free(res_array);
-	//res_array = (int*) malloc(numEquivalent*sizeof(int));
+	free(res_array);
+	res_array = (int*) malloc(numEquivalent*sizeof(int));
 	int counter = 0;
 	
 	// Get initial information of digits and rounded resistance.
