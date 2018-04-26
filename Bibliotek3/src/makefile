@@ -1,7 +1,7 @@
 TOPTARGETS := all clean
 
 SUBDIRS := $(wildcard */.)
-LIB := lib
+LIB := makefile.lib
 
 $(TOPTARGETS): $(LIB) $(SUBDIRS)
 
