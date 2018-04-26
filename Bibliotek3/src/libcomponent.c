@@ -13,6 +13,7 @@
 
 #include "libcomponent.h"
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
@@ -52,12 +53,17 @@ int numDigits(int num)
 //         also fills the pointer with the equivalent
 //         resistances needed to get the original.
 int e_resistance(float orig_resistance, float *res_array) {
+    
+    // Check if res_array is null
+    if (res_array == NULL) {
+        fprintf(stderr, "ERROR in e_resistance: res_array is NULL!\n");
+        return 0;
+    }
 	
-	float resistance = orig_resistance;
+    // Make orig_resistance integer
+	int resistance = floor(orig_resistance);
 
 	// Allocate memory for pointer.
-	//free(res_array);
-	//res_array = (int*) malloc(numEquivalent*sizeof(int));
 	int counter = 0;
 	
 	// Get initial information of digits and rounded resistance.

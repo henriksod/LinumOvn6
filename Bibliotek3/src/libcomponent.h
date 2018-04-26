@@ -14,9 +14,6 @@
 #ifndef __LIBCOMPONENT_H__
 #define __LIBCOMPONENT_H__
 
-#include <stdlib.h>
-#include <math.h>
-
 // Number of equivalent e12 resistances to find by the e_resistance
 // function.
 const int numEquivalent = 3;

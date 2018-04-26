@@ -20,7 +20,7 @@
 int main(int argc, char *argv[])
 {
 	// Set default resistance.
-	int test_resistance = 4700;
+	float test_resistance = 4700;
 	
 	// Take in program args.
 	if (argc == 2)
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		
 	// Allocate dummy memory so compiler doesn't complain,
 	// it will be freed in function e_resistance anyways.
-	int* res_array = (int*) malloc(3*sizeof(int));
+	float* res_array = (float*) malloc(3*sizeof(float));
 
 	// Compute equivalent e12 series resistances.
 	int count = e_resistance(test_resistance,  res_array);
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	// Print results.
 	printf("Count:\t%d\n", count);
 	for (int i = 0; i < numEquivalent; i++)
-		printf("Equiv. resistance %d:\t%d\n", i+1, res_array[i]);
+		printf("Equiv. resistance %d:\t%f\n", i+1, res_array[i]);
 
 	// Free memory.
 	free(res_array);
