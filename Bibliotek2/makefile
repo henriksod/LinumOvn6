@@ -13,7 +13,7 @@ all: $(TARGET)
 lib: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(LDFLAGS) -o $@ $<
+	$(CC) -o $@ $< $(LDFLAGS) 
 
 clean:
 	$(RM) $(TARGET) $(OBJECTS)
