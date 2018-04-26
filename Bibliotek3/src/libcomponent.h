@@ -31,6 +31,6 @@ const int e12_series[] = {0, 10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82};
 // output: number of equivalent resistances needed and
 //         also fills the pointer with the equivalent
 //         resistances needed to get the original.
-extern int e_resistance(float orig_resistance, float *res_array);
+extern int e_resistance(int orig_resistance, int *res_array);
 
 #endif /* __LIBCOMPONENT_H__ */
