@@ -3,7 +3,8 @@ INSTDIRPROG = /usr/local/bin
 INSTDIRLIB = /usr/local/lib
 LIBFLAG = -L. -lresistance -Wl,-rpath,/usr/local/lib
 
-all:	electrotest
+#all:	electrotest
+all:	libresistance.so
 
 lib:	libresistance.so
 
