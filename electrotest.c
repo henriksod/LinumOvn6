@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "./Bibliotek1/lib/libresistance.h"
 #include "./Bibliotek2/src/power.h"
 #include "./Bibliotek3/src/libcomponent.h"
@@ -39,7 +40,7 @@ int main(void)
 	free(rval);
 
 	//Skriv ut effekt:
-	printf("Effekt: \n%3.2f W\n", calc_power_r(volt, resistance));
+	printf("Effekt: \n%3.2f W\n", floor(calc_power_r(volt, resistance)*100)/100);
 
 	//Skriv ut ersättningsresistanser:
 	//Minnesallokering av arrayen rval
@@ -48,7 +49,7 @@ int main(void)
 	printf("Ersättingsresistanser i E12-serien kopplade i serie: \n");
 	for(i = 0; i < antal; ++i)
 	{
-		printf("%d\n", rval[i]);
+		printf("%.0f\n", rval[i]);
 	}
 	//Frigör minnet
 	free(rval);
