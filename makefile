@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall 
-LDFLAGSLOCAL = -Wl,$(LIBOUTDIR)/libresistance.so -Wl,$(LIBOUTDIR)/libpower.so -Wl,$(LIBOUTDIR)/libcomponent.so
-LDFLAGS = -lresistance -lpower -lcomponent
+LDFLAGSLOCAL = -lm -Wl,$(LIBOUTDIR)/libresistance.so -Wl,$(LIBOUTDIR)/libpower.so -Wl,$(LIBOUTDIR)/libcomponent.so
+LDFLAGS = -lm -lresistance -lpower -lcomponent
 RM = -rm -f
 
 TARGET  = electrotest
@@ -35,7 +35,7 @@ uninstall :
 	$(RM) /usr/bin/$(TARGET)
 	$(RM) /usr/lib/libresistance.so
 	$(RM) /usr/lib/libpower.so
-	$(RM) /usr/lib/src/libcomponent.so
+	$(RM) /usr/lib/libcomponent.so
 
 $(LIBOUTDIR)/:
 	mkdir -p $@
